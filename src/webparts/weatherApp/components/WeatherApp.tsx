@@ -8,18 +8,15 @@ export default class WeatherApp extends React.Component<IWeatherAppProps, {}> {
     return (
       <div className={styles.weatherApp}>
         <div className={styles.container}>
-          <div className={styles.row}>
+          <div className={styles.flex}>
             <div className={styles.column}>
-              <span className={styles.title}>Welcome to SharePoint!</span>
-              <p className={styles.subTitle}>
-                Customize SharePoint experiences using Web Parts.
-              </p>
-              <p className={styles.description}>
-                {escape(this.props.description)}
-              </p>
-              <a href="https://aka.ms/spfx" className={styles.button}>
-                <span className={styles.label}>Learn more</span>
-              </a>
+              <h1>Column 1</h1>
+            </div>
+            <div className={styles.column}>
+              <h1>Column 2</h1>
+            </div>
+            <div className={styles.column}>
+              <h1>Column 3</h1>
             </div>
           </div>
         </div>
