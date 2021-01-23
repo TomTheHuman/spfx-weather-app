@@ -25,25 +25,32 @@
     flex-direction: row;
     flex-wrap: wrap;
     overflow: auto;
+    width: 100%;
   }
 
-  .column {
-    min-width: 220px;
+  .columnSm {
+    min-width: 170px;
+    width: 30%;
+  }
+
+  .columnMed {
+    min-width: 170px;
+    width: 60%;
   }
 
   .title {
-    @include ms-font-xl;
-    @include ms-fontColor-white;
+    font-size: 1em;
+    color: black;
   }
 
   .subTitle {
-    @include ms-font-l;
-    @include ms-fontColor-white;
+    font-size: 1em;
+    color: black;
   }
 
   .description {
-    @include ms-font-l;
-    @include ms-fontColor-white;
+    font-size: 1em;
+    color: black;
   }
 
   .button {
