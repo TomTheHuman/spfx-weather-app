@@ -13,13 +13,17 @@ export default class WeatherApp extends React.Component<IWeatherAppProps, {}> {
   public render(): React.ReactElement<IWeatherAppProps> {
     return (
       <div className={styles.weatherApp}>
-        <div className={styles.container}>
-          <div className={styles.flex}>
-            <div className={styles.columnSm}>
-              <h1>Column 1</h1>
+        <div className={styles.flexContainer}>
+          <div id={styles.imageContainer} className={styles.flexChild}>
+            <p>Image Goes Here</p>
+          </div>
+          <div id={styles.textContainer} className={styles.flexChild}>
+            <div className={styles.forecastHeader}>
+              <h2 className={styles.title}>Your forecast for</h2>
+              <h1 className={styles.location}>Sacramento, CA</h1>
             </div>
-            <div className={styles.columnMed}>
-              <h1>Column 2</h1>
+            <div>
+              <h1 className={styles.temperature}>68°F</h1>
             </div>
           </div>
         </div>
