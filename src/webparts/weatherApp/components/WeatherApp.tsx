@@ -3,8 +3,39 @@ import styles from "./WeatherApp.module.scss";
 import { IWeatherAppProps } from "./IWeatherAppProps";
 import { escape } from "@microsoft/sp-lodash-subset";
 
-export default class WeatherApp extends React.Component<IWeatherAppProps, {}> {
+export default class WeatherApp extends React.Component<IWeatherAppProps, any> {
+  constructor(props: IWeatherAppProps) {
+    super(props);
+    this.state = {
+      longitude: null,
+      latitude: null,
+      city: "Sacramento",
+      state: "CA",
+      temperature: "69",
+      scale: "F",
+    };
+  }
+
   componentDidMount() {
+    if ("geolocation" in navigator) {
+      // use geolocation to get long and lat
+
+      navigator.geolocation.getCurrentPosition(function (position) {
+        this.setState({
+          longitude: position.coords.longitude,
+          latitude: position.coords.latitude,
+        });
+      });
+      console.log(
+        "Longitude " +
+          this.state.longitude +
+          ", Latitude: " +
+          this.state.latitude
+      );
+    } else {
+      console.log("It don't work!");
+    }
+
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Position is: ", position);
     });

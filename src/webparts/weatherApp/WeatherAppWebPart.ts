@@ -18,10 +18,7 @@ export interface IWeatherAppWebPartProps {
 export default class WeatherAppWebPart extends BaseClientSideWebPart<IWeatherAppWebPartProps> {
   public render(): void {
     const element: React.ReactElement<IWeatherAppProps> = React.createElement(
-      WeatherApp,
-      {
-        description: this.properties.description,
-      }
+      WeatherApp
     );
 
     ReactDom.render(element, this.domElement);

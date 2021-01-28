@@ -7,6 +7,7 @@
   justify-content: center;
   background-image: linear-gradient(45deg, #bce7ff, #ffe5be);
   border-radius: 20px;
+  margin: 10px;
 
   .flexContainer {
     display: flex;
@@ -16,7 +17,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px 10px;
   }
 
   .flexChild {
@@ -54,6 +55,7 @@
 
   .temperature {
     font-weight: bold;
-    font-size: 2.4em;
+    font-size: 2.8em;
+    margin: 0;
   }
 }
