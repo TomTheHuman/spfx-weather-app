@@ -14,14 +14,19 @@
   "requiresCustomScript": false,
   "supportedHosts": ["SharePointWebPart"],
 
-  "preconfiguredEntries": [{
-    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
-    "group": { "default": "Other" },
-    "title": { "default": "Weather App" },
-    "description": { "default": "A themed weather app to brighten your day!" },
-    "officeFabricIconFontName": "Page",
-    "properties": {
-      "description": "Weather App"
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
+      "group": { "default": "Other" },
+      "title": { "default": "Weather App" },
+      "description": {
+        "default": "A themed weather app to brighten your day!"
+      },
+      "officeFabricIconFontName": "Page",
+      "properties": {
+        "description": "Weather Apps",
+        "geocode_api_key": "AIzaSyD6IKOpk-6t3SRsan-_y6Owwzz-bzSycsk"
+      }
     }
-  }]
+  ]
 }
