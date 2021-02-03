@@ -13,12 +13,17 @@ import { IWeatherAppProps } from "./components/IWeatherAppProps";
 
 export interface IWeatherAppWebPartProps {
   description: string;
+  geocode_api_key: string;
 }
 
 export default class WeatherAppWebPart extends BaseClientSideWebPart<IWeatherAppWebPartProps> {
   public render(): void {
     const element: React.ReactElement<IWeatherAppProps> = React.createElement(
-      WeatherApp
+      WeatherApp,
+      {
+        description: this.properties.description,
+        geocode_api_key: "AIzaSyD6IKOpk-6t3SRsan-_y6Owwzz-bzSycsk",
+      }
     );
 
     ReactDom.render(element, this.domElement);
