@@ -36,7 +36,7 @@ export default class WeatherApp extends React.Component<IWeatherAppProps, any> {
     axios
       .get(
         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}
-      &location_type=ROOFTOP&result_type=street_address&key=${this.props.geocode_api_key}`
+      &location_type=ROOFTOP&result_type=street_address&key=${process.env.SPFX_GEOCODE_API_KEY}`
       )
       .then((res) => {
         this.setState(
