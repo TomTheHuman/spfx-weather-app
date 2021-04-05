@@ -10,10 +10,11 @@ export default class WeatherApp extends React.Component<IWeatherAppProps, any> {
     this.state = {
       longitude: null,
       latitude: null,
-      city: "Sacramento",
-      state_code: "CA",
-      temperature: "69",
-      scale: "F",
+      weatherData: {
+        city: "Sacramento",
+        temp: "69",
+        icon: "01d",
+      },
     };
     this.getGeoCode = this.getGeoCode.bind(this);
   }
@@ -31,42 +32,49 @@ export default class WeatherApp extends React.Component<IWeatherAppProps, any> {
     );
   }
 
-  getGeoCode() {
+  // Use local lat/long to retrieve GeoCode from API
+  private getGeoCode() {
     // Add try/catch block here
     axios
       .get(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}
-      &location_type=ROOFTOP&result_type=street_address&key=${process.env.SPFX_GEOCODE_API_KEY}`
+        `${process.env.SPFX_GEOCODE_URL}lat=${this.state.latitude}&lon=${this.state.longitude}&appid=${process.env.SPFX_GEOCODE_API_KEY}`
       )
       .then((res) => {
-        this.setState(
-          {
-            city: res.data.results[0].address_components[2].long_name,
-            state_code: res.data.results[0].address_components[4].short_name,
-          },
-          () => {
-            console.log(this.state);
-          }
-        );
+        this.setState({
+          city: res.data.name,
+          temp: res.data.main.temp | 0,
+          icon: res.data.weather[0].icon,
+        });
+        console.log(res);
+        () => {
+          console.log(this.state);
+        };
       });
   }
 
   public render(): React.ReactElement<IWeatherAppProps> {
+    const iconPath = "../src/webparts/weatherApp/assets/";
+    console.log(iconPath + this.state.weatherData.icon + ".png");
+
     return (
       <div className={styles.weatherApp}>
         <div className={styles.flexContainer}>
           <div id={styles.imageContainer} className={styles.flexChild}>
-            <p>{this.props.description}</p>
+            <img
+              src={iconPath + this.state.weatherData.icon + ".png"}
+              alt="weather icon"
+              id={styles.weatherIcon}
+            ></img>
           </div>
           <div id={styles.textContainer} className={styles.flexChild}>
             <div className={styles.forecastHeader}>
               <h2 className={styles.title}>Your forecast for</h2>
-              <h1 className={styles.location}>
-                {this.state.city}, {this.state.state_code}
-              </h1>
+              <h1 className={styles.location}>{this.state.city}</h1>
             </div>
             <div>
-              <h1 className={styles.temperature}>68°F</h1>
+              <h1 className={styles.temperature}>
+                {this.state.temp}°{this.state.scale}
+              </h1>
             </div>
           </div>
         </div>
