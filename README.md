@@ -29,11 +29,11 @@ A light-weight local weather web part. Simple, yet eye-catching.
 
 ## Version history
 
-| Version | Date             | Comments                                                    |
-| ------- | ---------------- | ----------------------------------------------------------- |
-| 1.0.0.0 | March 10, 2021   | Deployment test release / no styles / image reference issue |
-| 2.0.0.0 | January 29, 2021 | Initial release / no dynamic styles                         |
-| 2.0.0.2 | April 11, 2021   | Updated with dynamic styles                                 |
+| Version | Date           | Comments                                                    |
+| ------- | -------------- | ----------------------------------------------------------- |
+| 1.0.0.0 | March 20, 2021 | Deployment test release / no styles / image reference issue |
+| 2.0.0.0 | April 2, 2021  | Initial release / no dynamic styles                         |
+| 2.0.0.2 | April 11, 2021 | Updated with dynamic styles                                 |
 
 ## Disclaimer
 
