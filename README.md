@@ -1,4 +1,4 @@
-# spfx-weather-app
+# SPFx Weather App
 
 ## Summary
 
