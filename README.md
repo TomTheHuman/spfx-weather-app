@@ -2,9 +2,15 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
+A light-weight local weather web part. Simple, yet eye-catching.
 
-[picture of the solution in action, if possible]
+### ☀ Modern styles for all weather patterns
+
+![various styles built in](styles.png)
+
+### 🛠 Resizes to adapt to modern pages
+
+![resized to modern pages](resize.png)
 
 ## Used SharePoint Framework Version
 
@@ -19,24 +25,19 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
 
-> Any special pre-requisites?
-
-## Solution
-
-Solution|Author(s)
---------|---------
-folder name | Author details (name, company, twitter alias with link)
+> Node v10 (10.23.0 was used in development)
 
 ## Version history
 
-Version|Date|Comments
--------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
+| Version | Date             | Comments                                                    |
+| ------- | ---------------- | ----------------------------------------------------------- |
+| 1.0.0.0 | March 10, 2021   | Deployment test release / no styles / image reference issue |
+| 2.0.0.0 | January 29, 2021 | Initial release / no dynamic styles                         |
+| 2.0.0.2 | April 11, 2021   | Updated with dynamic styles                                 |
 
 ## Disclaimer
 
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 ---
 
@@ -49,20 +50,6 @@ Version|Date|Comments
   - **gulp serve**
 
 > Include any additional steps as needed.
-
-## Features
-
-Description of the extension that expands upon high-level summary above.
-
-This extension illustrates the following concepts:
-
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
 ## References
 
