@@ -10,11 +10,9 @@ export default class WeatherApp extends React.Component<IWeatherAppProps, any> {
     this.state = {
       longitude: null,
       latitude: null,
-      weatherData: {
-        city: "",
-        temp: "",
-        icon: "01d",
-      },
+      city: "",
+      temp: "",
+      icon: "01d",
     };
     this.getWeather = this.getWeather.bind(this);
   }
@@ -50,24 +48,27 @@ export default class WeatherApp extends React.Component<IWeatherAppProps, any> {
         `${process.env.SPFX_GEOCODE_URL}lat=${this.state.latitude}&lon=${this.state.longitude}&appid=${process.env.SPFX_GEOCODE_API_KEY}`
       )
       .then((res) => {
-        this.setState({
-          city: res.data.name,
-          temp: res.data.main.temp | 0,
-          icon: res.data.weather[0].icon,
-        });
+        this.setState(
+          {
+            city: res.data.name,
+            temp: res.data.main.temp | 0,
+            icon: res.data.weather[0].icon,
+          },
+          () => console.log(this.state)
+        );
       });
   }
 
   public render(): React.ReactElement<IWeatherAppProps> {
     const weatherAppClasses =
-      styles.weatherApp + " " + styles["bg_" + this.state.weatherData.icon];
+      styles.weatherApp + " " + styles["bg_" + this.state.icon];
 
     return (
       <div className={weatherAppClasses}>
         <div className={styles.flexContainer}>
           <div id={styles.imageContainer} className={styles.flexChild}>
             <img
-              src={require("./assets/" + this.state.weatherData.icon + ".png")}
+              src={require("./assets/" + this.state.icon + ".png")}
               alt="weather icon"
               id={styles.weatherIcon}
             ></img>
