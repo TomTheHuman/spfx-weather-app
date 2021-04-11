@@ -11,29 +11,39 @@ export default class WeatherApp extends React.Component<IWeatherAppProps, any> {
       longitude: null,
       latitude: null,
       weatherData: {
-        city: "Sacramento",
-        temp: "69",
+        city: "",
+        temp: "",
         icon: "01d",
       },
     };
-    this.getGeoCode = this.getGeoCode.bind(this);
+    this.getWeather = this.getWeather.bind(this);
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     // Set state with current coordinates
-    navigator.geolocation.getCurrentPosition((success) =>
-      this.setState(
-        {
-          longitude: success.coords.longitude,
-          latitude: success.coords.latitude,
-        },
-        this.getGeoCode
-      )
+    navigator.geolocation.getCurrentPosition(
+      (success) =>
+        this.setState(
+          {
+            longitude: success.coords.longitude,
+            latitude: success.coords.latitude,
+          },
+          this.getWeather
+        ),
+      (error) => {
+        this.setState(
+          {
+            longitude: -121.478851,
+            latitude: 38.575764,
+          },
+          this.getWeather
+        );
+      }
     );
   }
 
   // Use local lat/long to retrieve GeoCode from API
-  private getGeoCode() {
+  private getWeather() {
     // Add try/catch block here
     axios
       .get(
@@ -45,23 +55,19 @@ export default class WeatherApp extends React.Component<IWeatherAppProps, any> {
           temp: res.data.main.temp | 0,
           icon: res.data.weather[0].icon,
         });
-        console.log(res);
-        () => {
-          console.log(this.state);
-        };
       });
   }
 
   public render(): React.ReactElement<IWeatherAppProps> {
-    const iconPath = "../src/webparts/weatherApp/assets/";
-    console.log(iconPath + this.state.weatherData.icon + ".png");
+    const weatherAppClasses =
+      styles.weatherApp + " " + styles["bg_" + this.state.weatherData.icon];
 
     return (
-      <div className={styles.weatherApp}>
+      <div className={weatherAppClasses}>
         <div className={styles.flexContainer}>
           <div id={styles.imageContainer} className={styles.flexChild}>
             <img
-              src={iconPath + this.state.weatherData.icon + ".png"}
+              src={require("./assets/" + this.state.weatherData.icon + ".png")}
               alt="weather icon"
               id={styles.weatherIcon}
             ></img>

@@ -2,12 +2,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
 
+.bg_01d {
+  background-image: linear-gradient(45deg, #d9fdff, #a9e0ff);
+}
+
+.bg_02d {
+  background-image: linear-gradient(45deg, #dbf8ff, #6ea8c8);
+}
+
+.bg_03d {
+  background-image: linear-gradient(45deg, #e9f7ff, #8db9e1);
+}
+
+.bg_04d {
+  background-image: linear-gradient(45deg, #c7d1d8, #8fb1ce);
+}
+
+.bg_09d {
+  background-image: linear-gradient(45deg, #aeaeae, #7b8ebf);
+}
+
+.bg_10d {
+  background-image: linear-gradient(45deg, #c2d9e0, #6a7ba7);
+}
+
+.bg_11d {
+  background-image: linear-gradient(45deg, #fff7db, #9d9d9d);
+}
+
+.bg_13d {
+  background-image: linear-gradient(45deg, #e1e1e1, #cdf6ff);
+}
+
+.bg_50d {
+  background-image: linear-gradient(45deg, #dedede, #d0e3e8);
+}
+
 .weatherApp {
   min-height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(45deg, #bce7ff, #ffe5be);
   border-radius: 20px;
   margin: 10px;
 

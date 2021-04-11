@@ -3,7 +3,7 @@
   "solution": {
     "name": "Weather",
     "id": "3facdde8-616d-494b-97ca-253b1f229ab2",
-    "version": "1.0.0.0",
+    "version": "1.1.0.9",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
