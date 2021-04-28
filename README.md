@@ -49,7 +49,21 @@ A light-weight local weather web part. Simple, yet eye-catching.
   - **npm install**
   - **gulp serve**
 
-> Include any additional steps as needed.
+## For Production
+
+- Clone this repository
+- Ensure that you are at the solution folder
+- in the command-line run:
+- **npm install**
+- **gulp bundle --ship**
+- **gulp package-solution --ship**
+- Open your SharePoint apps catalog
+- Locate the .sppkg file located in your solution folder under "\sharepoint\solution"
+- Upload the .sppkg file to your apps catalog
+- Deploy the app
+- Add the web part to your page!
+
+Note that users must have location services enabled, otherwise the app will update to Sacramento, CA. This will be patched in a later update.
 
 ## References
 
